@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <templates id="template" xml:space="preserve">
+
+        <!-- fiddling with https://github.com/odoo/odoo/blob/15.0/addons/web_editor/static/src/xml/editor.xml -->
+        <t t-extend="web_editor.toolbar">
+            <t t-jquery="#font-size ul li:nth-child(7)" t-operation="after">
+                <li>
+                    <a class="dropdown-item" href="#" data-call="setFontSize" data-arg1="16px">16</a>
+                </li>
+            </t>
+            <t t-jquery="#font-size ul" t-operation="append">
+                <li>
+                    <a class="dropdown-item" href="#" data-call="setFontSize" data-arg1="99px">99</a>
+                </li>
+            </t>
+            <!-- perhaps my jquery was wrong... so trying with a drastic one -->
+            <t t-jquery="#font" t-operation="replace" />
+
+        </t>
+
+    </templates>
+</odoo>
